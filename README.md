@@ -17,8 +17,8 @@
     <a href="#-quick-start">Quick Start</a> •
     <a href="#-api-usage">API</a> •
     <a href="#-retrieval-pipeline">Pipeline</a> •
-    <a href="#-deployment">Deployment</a>
-    <a href="#-engineering-decisions--design-patterns">Design Patterns</a> •
+    <a href="#-deployment">Deployment</a> •
+    <a href="#-engineering-decisions--design-patterns">Design Patterns</a>
 
   </p>
 
@@ -89,9 +89,9 @@ Current capabilities of ContextForge:
 - ⚡ **Resource Reuse** — Expensive models and external connections are initialized once per application process and reused across requests.
 - 💾 **Caching** — TTL caching is used for operations where repeated network calls are unnecessary.
 
---
+---
 
-## 🏗️ Architecture
+## 🏗 Architecture
 
 At a high level, ContextForge follows a standard RAG architecture with separate document ingestion, retrieval, generation, and API concerns.
 
