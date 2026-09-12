@@ -1,0 +1,45 @@
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Data (don't copy user data into image)
+data/chroma/
+data/documents/
+
+# Logs
+logs/
+
+# Tests
+tests/
+.pytest_cache/
+htmlcov/
+.coverage
+
+# Environment files (secrets — never bake into image!)
+.env
+
+# Misc
+*.md
+LICENSE
+.DS_Store
+Thumbs.db
+uv.lock
+.python-version

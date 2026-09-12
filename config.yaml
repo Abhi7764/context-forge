@@ -1,0 +1,56 @@
+# ContextForge Configuration
+# All non-secret settings live here. Secrets go in .env
+
+embedding:
+  provider: sentence-transformers   # Options: sentence-transformers
+  model: sentence-transformers/all-MiniLM-L6-v2
+
+chunking:
+  chunk_size: 500
+  chunk_overlap: 50
+
+retrieval:
+  top_k: 3                          # Final results returned to LLM
+  strategy: hybrid                   # Options: semantic, hybrid
+  semantic_top_k: 10                 # Candidates from vector search
+  bm25_top_k: 10                     # Candidates from keyword search
+  rrf_k: 60                          # RRF fusion constant
+
+reranking:
+  enabled: true                      # Set to false to disable reranking
+  model: cross-encoder/ms-marco-MiniLM-L-6-v2
+
+vector_db:
+  provider: pinecone               # Options: pinecone, chroma
+  # Pinecone settings
+  index_name: context-forge
+  namespace: default
+  cloud: aws
+  region: us-east-1
+  # ChromaDB settings (used when provider: chroma)
+  chroma_persist_directory: data/chroma
+  collection_name: rag_documents
+
+# llm:
+#   provider: openai                 # Options: openai, anthropic, gemini, ollama
+#   model: gpt-4o-mini               # Model name for the chosen provider
+#   temperature: 0.2
+#   max_tokens: 1024
+
+
+llm:
+  provider: gemini                 # Options: openai, anthropic, gemini, ollama
+  model: gemini-3.8-flash               # Model name for the chosen provider
+  temperature: 0.2
+  max_tokens: 1024
+
+ollama:
+  base_url: http://localhost:11434
+
+api:
+  host: 0.0.0.0
+  port: 8000
+
+logging:
+  level: INFO
+  log_file: logs/app.log
